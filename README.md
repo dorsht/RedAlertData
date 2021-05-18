@@ -1,7 +1,7 @@
 # RedAlertData
 
 I wrote this python script in order to receive data about the red alerts in Israel during operation Guardian of the Walls from Pikud Ha'Oref API and show them on graphs.
-The shown data is for the last 7 days.
+The shown data is from the starting of the operation (10.5.2020).
 
 You have the ability to see the following data:
 

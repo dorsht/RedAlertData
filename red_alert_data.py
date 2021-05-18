@@ -2,14 +2,11 @@
 # -*- coding: utf-8 -*-
 import requests
 import pandas as pd
-from datetime import datetime, timedelta
+from datetime import datetime
 import matplotlib.pyplot as plt
 from bidi.algorithm import get_display
 from tkinter import *
 from tkinter import ttk
-
-
-DAYS_TO_SUBTRACT = 7
 
 
 def show_plot_data(plot_data, windows_title, x_label, y_label):
@@ -25,9 +22,9 @@ def show_plot_data(plot_data, windows_title, x_label, y_label):
 
 def get_oref_data():
     current_datetime = datetime.today()
-    prev_week_datetime = datetime.today() - timedelta(days=DAYS_TO_SUBTRACT)
+    starting_operation_date = datetime(2020, 5, 10)  # Operation starting date.
     current_date = current_datetime.date()
-    prev_week_date = prev_week_datetime.date()
+    prev_week_date = starting_operation_date.date()
     oref_url = f'https://www.oref.org.il//Shared/Ajax/GetAlarmsHistory.aspx?lang=he&fromDate={prev_week_date.day}.{prev_week_date.month}.{prev_week_date.year}&toDate={current_date.day}.{current_date.month}.{current_date.year}&mode=0 '
     oref_json = requests.get(oref_url).json()
     return oref_json

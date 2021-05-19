@@ -22,10 +22,9 @@ def show_plot_data(plot_data, windows_title, x_label, y_label):
 
 def get_oref_data():
     current_datetime = datetime.today()
-    starting_operation_date = datetime(2020, 5, 10)  # Operation starting date.
+    starting_operation_date = datetime(2020, 5, 10).date()  # Operation starting date.
     current_date = current_datetime.date()
-    prev_week_date = starting_operation_date.date()
-    oref_url = f'https://www.oref.org.il//Shared/Ajax/GetAlarmsHistory.aspx?lang=he&fromDate={prev_week_date.day}.{prev_week_date.month}.{prev_week_date.year}&toDate={current_date.day}.{current_date.month}.{current_date.year}&mode=0 '
+    oref_url = f'https://www.oref.org.il//Shared/Ajax/GetAlarmsHistory.aspx?lang=he&fromDate={starting_operation_date.day}.{starting_operation_date.month}.{starting_operation_date.year}&toDate={current_date.day}.{current_date.month}.{current_date.year}&mode=0 '
     oref_json = requests.get(oref_url).json()
     return oref_json
 

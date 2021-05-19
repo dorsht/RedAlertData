@@ -9,4 +9,4 @@ You have the ability to see the following data:
 2. Number of alerts per hour for all the areas.
 3. Number of alerts per hour for specific area, by user selection.
 
-Prerequisites: pandas, matplotlib, bidi.
+Prerequisites: pandas, matplotlib, bidi and requests.
